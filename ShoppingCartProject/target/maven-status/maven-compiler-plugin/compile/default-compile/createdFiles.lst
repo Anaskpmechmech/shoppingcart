@@ -1,0 +1,5 @@
+org\dxc\shopping\model\Product.class
+org\dxc\shopping\service\CartOperations.class
+org\dxc\shopping\ShoppingCart.class
+org\dxc\shopping\service\CartOperationServiceImpl.class
+org\dxc\shopping\exception\ProductException.class
