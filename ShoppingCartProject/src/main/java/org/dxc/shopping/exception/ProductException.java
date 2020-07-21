@@ -1,10 +1,19 @@
 package org.dxc.shopping.exception;
 
 public class ProductException extends Exception{
-	@Override
-	public String toString() {
-		return " Product is not available";
+private static final long serialVersionUID = 1L;
+	private String productname;
+	
+	public ProductException() {
+		super();
 	}
-
-
+	
+	public ProductException(String productname) {
+		super();
+		this.productname = productname;
+	}
+	public String toString() {
+		return "The product  "+ productname + " is not available";
+		
+	}
 }

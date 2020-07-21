@@ -33,10 +33,10 @@ public class CartOperationServiceImpl implements CartOperationService{
 				break;}}
 		try {
 		if(item.isEmpty())
-			throw new ProductException();                 // throws exception if cart is empty
+			throw new ProductException(name);                 // throws exception if cart is empty
 		if(r!=true) {
-			throw new ProductException();}               // throws exception if cart doesn't contain user entered product name 
-		}catch(ProductException e)	{                    // to remove
+			throw new ProductException(name);}               // throws exception if cart doesn't contain user entered product name 
+		}catch(ProductException e)	{ 							// to remove
 			System.out.println("ProductException:"+e);}
 		while(iter.hasNext()) {
 			Product p1=iter.next();
@@ -44,7 +44,6 @@ public class CartOperationServiceImpl implements CartOperationService{
 			float cost=((p1.getPrice()*p1.getQuantity())+((p1.getPrice()*p1.getQuantity())*tax_percentage)/100);
 			invoiceAmount=invoiceAmount-cost;
 			iter.remove();}
-			
 		}System.out.println(item);
 	}}
 		
