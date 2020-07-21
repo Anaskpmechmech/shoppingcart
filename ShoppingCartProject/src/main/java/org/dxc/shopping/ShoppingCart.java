@@ -14,20 +14,17 @@ public class ShoppingCart {
 		Scanner s=new Scanner(System.in);
 		Product p1=new Product(null, 0, 0);
 		System.out.println("Enter the tax percentage");
-		float tax=s.nextFloat();
-		s.nextLine();
+		float tax=Float.parseFloat(s.nextLine());
 		CartOperationService C=new CartOperationServiceImpl(tax);
-		int i=0;
 		C.removeFromCart(p1);
+		int i=0;
 		while(i<5) {
 		System.out.println("Enter the name of the product");
 		String name=s.nextLine();
 		System.out.println("Enter the product price");
-		float price=s.nextFloat();
-		s.nextLine();
+		float price=Float.parseFloat(s.nextLine());
 		System.out.println("Enter the quantity of the product");
-		int quantity=s.nextInt();
-		s.nextLine();
+		int quantity=Integer.parseInt(s.nextLine());
 		Product p=new Product(name,price,quantity);
 		C.addToCart(p);
 		i++;
