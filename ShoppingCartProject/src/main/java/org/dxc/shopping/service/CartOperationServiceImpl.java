@@ -3,11 +3,10 @@ package org.dxc.shopping.service;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
-
 import org.dxc.shopping.exception.ProductException;
 import org.dxc.shopping.model.Product;
 
-public class CartOperationServiceImpl implements CartOperations{
+public class CartOperationServiceImpl implements CartOperationService{
 	private float tax_percentage;
 	private float invoiceAmount; 
 	private ArrayList<Product> item=new ArrayList<Product>();
@@ -16,14 +15,14 @@ public class CartOperationServiceImpl implements CartOperations{
 	}
 	public float getInvoiceAmount() {
 		return invoiceAmount;
-	}
+	}@Override
 	public float addToCart(Product p) {
 		item.add(p);
 		System.out.println(item);
 		float cost=(p.getPrice()*p.getQuantity())+(((p.getPrice()*p.getQuantity())*this.tax_percentage)/100);
 		invoiceAmount=invoiceAmount+cost;
 		return cost;
-	}
+	}@Override
 	public void removeFromCart(Product p) {
 		Iterator<Product> iter=item.iterator();
 		String name=p.getName();

@@ -2,10 +2,11 @@ package org.dxc.shopping;
 
 import java.util.Scanner;
 
+
 import org.dxc.shopping.exception.ProductException;
 import org.dxc.shopping.model.Product;
 import org.dxc.shopping.service.CartOperationServiceImpl;
-import org.dxc.shopping.service.CartOperations;
+import org.dxc.shopping.service.CartOperationService;
 
 public class ShoppingCart {
 
@@ -15,7 +16,7 @@ public class ShoppingCart {
 		System.out.println("Enter the tax percentage");
 		float tax=s.nextFloat();
 		s.nextLine();
-		CartOperations C=new CartOperationServiceImpl(tax);
+		CartOperationService C=new CartOperationServiceImpl(tax);
 		int i=0;
 		C.removeFromCart(p1);
 		while(i<5) {
